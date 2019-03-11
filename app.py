@@ -8,10 +8,10 @@ EVENT_LIST = ['3x3', '2x2', '4x4', '5x5', '6x6', '7x7', '3BLD', 'FMC', 'OH', 'fe
             'pyr', 'sk', 'sq', '4BLD', '5BLD', 'MBLD']
 USE_COLUMNS = ['name', 'single', 'average', 'worldRank']
 
-MYSQL_USERNAME ='root'
-MYSQL_PASSWORD = '13261709aA!'
-MYSQL_HOST ='localhost'
-MYSQL_DATABASE ='WCA_DB'
+MYSQL_USERNAME = "####"
+MYSQL_PASSWORD = "####"
+MYSQL_HOST ="####"
+MYSQL_DATABASE ="####"
 
 app = Flask(__name__)
 @app.route('/', methods=['GET'])
@@ -76,4 +76,3 @@ def make_use_countries(df):
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', threaded=True)
-
