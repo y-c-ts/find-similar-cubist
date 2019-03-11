@@ -74,5 +74,21 @@ def make_use_countries(df):
     return use_country.tolist()
 
 
+def make_use_countries(df):
+    grouped = df.groupby('country')
+    count_df = pd.DataFrame(grouped['id'].count())
+    use_country = count_df[(count_df['id'] > 500) & (count_df['id'] < 5000)].index
+    return use_country.tolist()
+
+
+def make_use_countries(df):
+    grouped = df.groupby('country')
+    count_df = pd.DataFrame(grouped['id'].count())
+    use_country = count_df[(count_df['id'] > 500) & (count_df['id'] < 5000)].index
+    return use_country.tolist()
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0', threaded=True)
