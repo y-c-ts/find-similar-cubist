@@ -65,3 +65,9 @@ class GetDataFromDB(object):
         for column in fill_columns:
             df[column] = df[column].fillna(df[column].max() + 10000)
         return df
+
+    def make_use_countries(self, df):
+        grouped = df.groupby('country')
+        count_df = pd.DataFrame(grouped['id'].count())
+        use_country = count_df[(count_df['id'] > 500) & (count_df['id'] < 5000)].index
+        return use_country.tolist()
