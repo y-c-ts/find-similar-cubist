@@ -1,0 +1,10 @@
+#ファイル
+.DS_Store
+.ipynb
+.cfg
+
+# ディレクトリ
+/lib
+/bin
+/include
+/__pycache__
