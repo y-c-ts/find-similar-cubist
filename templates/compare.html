@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>similar_cuber</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">  
+        tr{
+            height: 0.01px;
+            width:  0.01px;
+            font-size: 100%;
+
+        }
+        .table1{
+            float: left;
+        }
+        .table2{
+            float: left;
+            margin-left: 20px;
+        }
+        table {
+            text-align: center;
+          }
+        caption {
+            font-size: 1000px;
+        }
+        p{
+            font-size: 30px;
+        }
+    </style>  
+  </head>
+  <body>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lr">
+    <h1 class="navbar-brand" id="title_name" style="font-size:30px">find_similar_cuber</h1>
+  </nav>
+    <div class="container">
+        <br>
+        <div class="table1">
+            <table class="table table-striped">
+                <caption　align="top"><p>{{my_id}}</p></caption>
+                <thead>
+                    <tr>
+                    <th scope="col">種目</th>
+                    <th scope="col">平均</th>
+                    <th scope="col">WR(平均)</th>
+                    <th scope="col">単発</th>
+                    <th scope="col">WR(単発)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for result in my_dict %}
+                    <tr>
+                        <td>{{result.eventId}}</td>
+                        <td>{{result.average}}</td>
+                        <td>{{result.single}}</td>
+                        <td>{{result.worldRank}}</td>
+                        <td>{{result.worldRank}}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="table2">
+                <table class="table table-striped">
+                    <caption　align="top"><p>{{target_id}}</p></caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">種目</th>
+                            <th scope="col">平均</th>
+                            <th scope="col">WR(平均)</th>
+                            <th scope="col">単発</th>
+                            <th scope="col">WR(単発)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for result in target_dict %}
+                        <tr>
+                            <td>{{result.eventId}}</td>
+                            <td>{{result.average}}</td>
+                            <td>{{result.single}}</td>
+                            <td>{{result.worldRank}}</td>
+                            <td>{{result.worldRank}}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            
+        
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>

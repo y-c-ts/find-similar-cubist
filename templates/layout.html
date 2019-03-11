@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>similar_cuber</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style type="text/css">  
+     
+    li {
+      list-style: none;
+    }
+    
+    li.str:before {
+      content: "＊";
+      position: relative;
+      left: -5px;
+    }
+    </style>  
+  </head>
+  <body>
+  <nav class="navbar navbar-dark bg-dark navbar-expand-lr">
+    <h1 class="navbar-brand" id="title_name" style="font-size:30px">find_similar_cuber</h1>
+  </nav>
+  <div class="jumbotron">
+    <div class="container">
+        <h2>自分と似たタイプのCuberを検索しよう！</h2>
+        <br>
+        <form method="POST" action="/result">
+            <select name="country" class="form-control form-control-sm" style="width:200px;">
+                {% for country in countries%}
+                <option>{{country}}</option>
+                {% endfor %}
+            </select>
+            <div style="position : relative; top: 15px;">
+              <label for="customRange3" stype = "position: relative; left: -20px;">類似の強度</label>
+              <input type="range" class="custom-range" min="40" max="120" step="2" id="customRange3" name="cluster_num">
+              <ul>
+                <li class="str" style="font-size: 12px;">右にスライドさせるほどより似ている人だけを抽出します</li>
+                <li class="str" style="font-size: 12px;">結果が出ない場合は左にスライドさせてください</li>
+              </ul>
+            </div>
+            <input type="text" name="wca_id" class="form-control" placeholder="WCA_IDを入力" aria-label="Recipient's username" aria-describedby="button-addon2" style="width:200px; position : relative; top: 20px;">
+            <button type="submit" class="btn btn-primary" style="position: relative; left: 220px; top: -18px;">実行</button>
+        </form>
+        {% block content %}
+        {% endblock %}
+    </div>
+  </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</html>
