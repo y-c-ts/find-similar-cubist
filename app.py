@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import MySQLdb
 
-EVENT_LIST = ['3x3', '2x2', '4x4', '5x5', '6x6', '7x7', '3BLD', 'FMC', 'OH', 'feet', 'clock', 'mega',
+EVENT_LIST = ['3x3' , '2x2', '4x4', '5x5', '6x6', '7x7', '3BLD', 'FMC', 'OH', 'feet', 'clock', 'mega',
             'pyr', 'sk', 'sq', '4BLD', '5BLD', 'MBLD']
 USE_COLUMNS = ['name', 'single', 'average', 'worldRank']
 
